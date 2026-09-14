@@ -23,6 +23,10 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p role="status"><%= notice %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

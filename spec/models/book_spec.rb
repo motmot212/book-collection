@@ -26,4 +26,16 @@ RSpec.describe Book, type: :model do
     expect(Book.count).to eq(0)
   end
 
+  # second rainy day test
+  it "does not cause an error when trying to save a book with a title blank" do
+    book = Book.new(
+      name: "",
+      details: "A book with no title."
+    )
+
+    expect(book.save).to be_falsey
+    expect(book.errors[:name]).to include("can't be blank")
+  end
+  
+
 end

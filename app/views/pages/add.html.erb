@@ -17,6 +17,27 @@
 
   <br>
 
+  <div>
+    <%= form.label :price, "Price" %>
+    <%= form.number_field :price, step: 0.01 %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :author, "Author" %>
+    <%= form.text_field :author %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :published_date, "Published Date" %>
+    <%= form.date_field :published_date %>
+  </div>
+
+  <br>
+
   <%= form.submit "Add Book" %>
 
 <% end %>
