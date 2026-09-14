@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Book was added successfully."
     else
       render :add, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     @book = Book.order(created_at: :desc).first
 
     if @book && @book.update(details: params[:book][:details])
-      redirect_to details_path
+      redirect_to root_path, notice: "Book was updated successfully."
     else
       redirect_to update_path
     end
@@ -46,12 +46,12 @@ class PagesController < ApplicationController
       @book.destroy
     end
 
-    redirect_to root_path
+    redirect_to root_path, notice: "Book was deleted successfully."
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:name, :details)
+    params.require(:book).permit(:name, :details, :price, :author, :published_date)
   end
 end

@@ -5,7 +5,15 @@
 <% if @books.any? %>
   <ul>
     <% @books.each do |book| %>
-      <li><%= book.name %></li>
+      <li>
+        <strong><%= book.name %></strong>
+        <% if book.author.present? %>
+          by <%= book.author %>
+        <% end %>
+        <% if book.price.present? %>
+          | $<%= number_with_precision(book.price, precision: 2) %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 <% else %>

@@ -10,6 +10,10 @@
 
   <p><%= @book.details %></p>
 
+  <p><strong>Author:</strong> <%= @book.author.presence || "Not provided" %></p>
+  <p><strong>Price:</strong> <%= @book.price.present? ? number_to_currency(@book.price) : "Not provided" %></p>
+  <p><strong>Published Date:</strong> <%= @book.published_date&.strftime("%B %-d, %Y") || "Not provided" %></p>
+
 <% else %>
 
   <p>There are no books in the collection.</p>
