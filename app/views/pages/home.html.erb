@@ -1,0 +1,26 @@
+<h1>Book Collection</h1>
+
+<h2>Books</h2>
+
+<% if @books.any? %>
+  <ul>
+    <% @books.each do |book| %>
+      <li><%= book.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No books yet</p>
+<% end %>
+
+<hr>
+
+<%= link_to "Add Book", add_path %>
+<br>
+
+<%= link_to "Update Book", update_path %>
+<br>
+
+<%= link_to "View Book", details_path %>
+<br>
+
+<%= link_to "Delete Book", delete_path %>

@@ -1,0 +1,32 @@
+<h1>Update Most Recent Book</h1>
+
+<% if @book %>
+
+  <h2><%= @book.name %></h2>
+
+  <p>Current Details:</p>
+  <p><%= @book.details %></p>
+
+  <%= form_with model: @book, url: update_path, method: :patch do |form| %>
+
+    <div>
+      <%= form.label :details, "New Details" %>
+      <br>
+      <%= form.text_area :details %>
+    </div>
+
+    <br>
+
+    <%= form.submit "Update Book" %>
+
+  <% end %>
+
+<% else %>
+
+  <p>There are no books to update.</p>
+
+<% end %>
+
+<br>
+
+<%= link_to "Back to Home", root_path %>

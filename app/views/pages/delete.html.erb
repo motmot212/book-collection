@@ -1,0 +1,21 @@
+<h1>Delete Most Recent Book</h1>
+
+<% if @book %>
+
+  <h2><%= @book.name %></h2>
+
+  <p><%= @book.details %></p>
+
+  <%= form_with url: delete_path, method: :delete do |form| %>
+    <%= form.submit "Delete Book" %>
+  <% end %>
+
+<% else %>
+
+  <p>There are no books to delete.</p>
+
+<% end %>
+
+<br>
+
+<%= link_to "Back to Home", root_path %>

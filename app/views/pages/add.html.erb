@@ -1,0 +1,26 @@
+<h1>Add Book</h1>
+
+<%= form_with model: @book, url: add_path, method: :post do |form| %>
+
+  <div>
+    <%= form.label :name, "Book Name" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :details, "Book Details" %>
+    <br>
+    <%= form.text_area :details %>
+  </div>
+
+  <br>
+
+  <%= form.submit "Add Book" %>
+
+<% end %>
+
+<br>
+
+<%= link_to "Back to Home", root_path %>

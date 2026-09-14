@@ -1,0 +1,21 @@
+<h1>Most Recent Book</h1>
+
+<% if @book %>
+
+  <h2><%= @book.name %></h2>
+
+  <p>
+    <strong>Details:</strong>
+  </p>
+
+  <p><%= @book.details %></p>
+
+<% else %>
+
+  <p>There are no books in the collection.</p>
+
+<% end %>
+
+<br>
+
+<%= link_to "Back to Home", root_path %>
