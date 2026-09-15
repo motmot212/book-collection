@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "pages#home"
+  resources :user_books
+  resources :users
+  root "user_books#index"
+  get "/books", to: "pages#home", as: :books
 
   get "/add", to: "pages#add"
   post "/add", to: "pages#create"
