@@ -1,0 +1,6 @@
+{
+  "name": "book-collection",
+  "scripts": {
+    "postdeploy": "bundle exec rails db:migrate"
+  }
+}
